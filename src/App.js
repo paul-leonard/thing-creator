@@ -45,10 +45,12 @@ class ThingList extends Component {
       <div>
         <ul>
           {this.props.allTheThings.map(thing => (
-            <ThingItem key={thing.id} nameToList={thing.name} description={thing. description} />
+            <ThingItem key={thing.id} nameToList={thing.name} description={thing.description} />
           ))}
         </ul>
-      <ThingForm onCreated = { this.props.onCreated } />
+      {/* TODO: pass along the length to use for the new id */}
+      {/* <ThingForm length={ this.props.allTheThings.length } onCreated = { this.props.onCreated } /> */}
+      <ThingForm length={ this.props.allTheThings.length } onCreated = { this.props.onCreated } />
       </div>
     )
   }
@@ -65,7 +67,10 @@ function Footer() {
 class ThingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {name: '', description: '' };
+    // let length = this.props.length;
+    // TODO: why do I need to do this length thing out here (above)?  Instead of in the next line?
+    // this.state = { id: {length}, name: '', description: '' };
+    this.state = { name: '', description: '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
