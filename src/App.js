@@ -12,10 +12,13 @@ class App extends Component {
         { id: 3, name: "mug", description: "Holds coffee." },
       ]
     }
+    this.onCreated = this.onCreated.bind(this);
   }
 
   onCreated(thing) {
-    // do some stuff 
+    // update state for things object array
+    const things = [...this.state.things, thing]
+    this.setState({ things })
   }
 
   render() {
@@ -76,7 +79,7 @@ class ThingForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.name);
+    // alert('Thanks for adding this new thing to track:  ' + this.state.name);
     event.preventDefault();
     this.props.onCreated(this.state);
   }
