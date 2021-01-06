@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      things: [
+      thingList: [
         { id: 1, name: "lamp", description: "I love lamp." },
         { id: 2, name: "desk", description: "Good for writing." },
         { id: 3, name: "mug", description: "Holds coffee." },
@@ -17,15 +17,15 @@ class App extends Component {
 
   onCreated(thing) {
     // update state for things object array
-    const things = [...this.state.things, thing]
-    this.setState({ things })
+    const thingList = [...this.state.thingList, thing]
+    this.setState({ thingList })
   }
 
   render() {
     return (
       <div className="App">
-        <Header thingCount={this.state.things.length} />
-        <ThingList allTheThings={this.state.things} onCreated={this.onCreated} />
+        <Header thingCount={this.state.thingList.length} />
+        <ThingList allTheThings={this.state.thingList} onCreated={this.onCreated} />
         <Footer />
       </div>
     );
