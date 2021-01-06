@@ -23,6 +23,7 @@ This site uses React to generate an odometer that is updated with each button cl
 
 ## Credits and Collaborations
 - collaborated with Mark Bell
+- [React Forms Tutorial](https://reactjs.org/docs/forms.html)
 
 ## Required Features
 - [ ] Create a ReactJS web application that displays a list of things, and allows creating new things.
