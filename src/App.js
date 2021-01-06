@@ -17,6 +17,7 @@ class App extends Component {
 
   onCreated(thing) {
     // update state for things object array
+    thing.id = this.state.thingList.length + 1;
     const thingList = [...this.state.thingList, thing]
     this.setState({ thingList })
   }
